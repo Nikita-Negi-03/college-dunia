@@ -1,38 +1,128 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.table-header{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: auto;
+  width: 100%;
+  justify-content: center;  
 }
 
-.App-link {
-  color: #61dafb;
+.header {
+  cursor: pointer;
+  background-color: #78bec3;
+  color:white;
+  font-weight: 700;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.headings {
+  text-align: left;
+  font-size: small;
+  padding-top: .5% ;
+  padding-left: .5%;
+  padding-bottom: .5% ;
+}
+
+.course {
+  background-color: yellow;
+  display: inline-block;
+  position: relative;
+  padding: 0.5% 1%;
+  border-left: 2px solid darkgreen;
+}
+
+.course::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: calc(-1 * var(--triangle-width, 10px));
+  width: 0;
+  height: 0;
+  border-top: var(--triangle-height, 12px) solid transparent;
+  border-bottom: var(--triangle-height, 13px) solid transparent;
+  border-left: var(--triangle-width, 10px) solid yellow;
+}
+
+/* Default triangle size */
+:root {
+  --triangle-width: 10px;
+  --triangle-height: 20px;
+}
+
+/* Adjust triangle size for larger screens */
+@media (min-width: 768px) {
+  :root {
+    --triangle-width: 12px;
+    --triangle-height: 14px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --triangle-width: 20px;
+    --triangle-height: 23px;
+  }
+}
+
+.apply{
+  color: orange;
+  font-weight: 700;
+}
+
+.download {
+  color: green;
+  font-weight: 700;
+}
+
+.rupees {
+  color:green;
+  font-size: 14px;
+}
+
+.social {
+  background-color: yellow;
+  display: inline-block;
+  position: relative;
+  padding: 0.5% 7%;
+  border-radius: 15px;
+}
+
+.voter {
+  width: 50%;
+  background-color: yellow;
+  display: inline-block;
+  position: relative;
+  padding: 0.5% 1%;
+  border-left: 2px solid darkgreen;
+}
+
+.featured {
+  background-color: rgb(243, 204, 132);
+}
+.featured-box{
+  margin-top:-15px !important;
+  top:0;
+  height: 30px;
+  width: 30%;
+  padding: 1% 3%;
+  z-index: 99999999;
+  border-bottom: 2px solid transparent;
+  border-bottom-left-radius: 20px; /* Adjust the radius as needed */
+  border-bottom-right-radius: 20px; /* Adjust the radius as needed */
+}
+
+.voter::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: calc(-1 * var(--triangle1-width, 6px));
+  width: 0;
+  height: 0;
+  border-top: var(--triangle1-height, 6px) solid transparent;
+  border-bottom: var(--triangle1-height, 6px) solid transparent;
+  border-left: var(--triangle1-width, 6px) solid yellow;
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --triangle1-width: 4px;
+    --triangle1-height: 10px;
   }
 }
